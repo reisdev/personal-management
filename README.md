@@ -11,12 +11,18 @@
 
 ### Install dependencies
 
-`npm install` or `yarn`
+`npm install`
+or
+`yarn`
 
 ### serve with hot reload at localhost:9080
 
-`npm run dev` or `yarn run dev`
+`npm run dev`
+or
+`yarn run dev`
 
 ### build electron application for production
 
-`npm run build` or `yarn run build`
+`npm run build`
+or
+`yarn run build`
