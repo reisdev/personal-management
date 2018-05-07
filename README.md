@@ -20,4 +20,3 @@
 ### build electron application for production
 
 `npm run build` or `yarn run build`
-
