@@ -4,8 +4,8 @@
 
 ## Dependencies
 
-- Electron: ^ 1.7.5
-- VueJS: ^ 2.4.2
+- Electron: ^1.7.5
+- VueJS: ^2.4.2
 
 ## Build Setup
 
