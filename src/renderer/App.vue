@@ -8,22 +8,16 @@
       >
         <LeftSideBar/>
       </v-navigation-drawer>
-      <TopBar/>
       <v-content>
-        <v-container fluid fill-height>
+        <v-container fluid>
+          <TopBar/>
           <v-slide-y-transition mode="out-in">
             <router-view></router-view>
           </v-slide-y-transition>
         </v-container>
       </v-content>
-      <v-navigation-drawer
-        temporary
-        fixed
-        app
-      >
-      </v-navigation-drawer>
       <v-footer app>
-        <v-spacer></v-spacer>
+        <v-spacer/>
         <span>&copy;2018</span>
         <v-spacer/>
       </v-footer>
@@ -35,7 +29,7 @@
 import LeftSideBar from "@/components/LeftSideBar";
 import TopBar from "@/components/TopBar";
 
-import { mapState, mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "personal-management",

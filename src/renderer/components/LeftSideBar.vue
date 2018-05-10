@@ -23,7 +23,7 @@ export default {
   data: () => {
     return {
       items: [
-        { icon: "apps", title: "Welcome", to: "/" },
+        { icon: "apps", title: "Página Inicial", to: "/" },
         { icon: "bubble_chart", title: "Inspire", to: "/inspire" }
       ]
     };

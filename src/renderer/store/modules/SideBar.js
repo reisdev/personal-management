@@ -3,16 +3,13 @@ const state = {
 }
 
 const actions = {
-    toggleSideBar({
+    toggleSideBar: ({
         commit
-    }) {
-        commit('TOGGLE_SIDE_BAR')
-    },
-    storeRef({
+    }) => commit('TOGGLE_SIDE_BAR'),
+    storeRef: ({
         commit
-    }, ref) {
-        commit('STORE_REF', ref)
-    }
+    }, ref) => commit('STORE_REF', ref)
+
 }
 
 const mutations = {
@@ -25,7 +22,7 @@ const mutations = {
 }
 
 const getters = {
-
+    user: state => state.username
 }
 
 export default {
