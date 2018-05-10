@@ -2,7 +2,7 @@ import Sequelize from 'sequelize'
 
 const db = new Sequelize('agape', 'root', '', {
     dialect: 'sqlite',
-    storage: '../database.sqlite'
+    storage: 'database.sqlite'
 })
 
 import userSchema from './user'
