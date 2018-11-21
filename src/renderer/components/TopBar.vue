@@ -15,10 +15,9 @@
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-  title: "A.G.A.P.E.",
   data() {
     return {
-      title: "A.G.A.P.E.",
+      title: "CasaGo",
       miniVariant: false
     };
   },

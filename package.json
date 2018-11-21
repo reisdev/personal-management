@@ -4,6 +4,7 @@
     "author": "Matheus dos Reis de Jesus <matheusdrdj@gmail.com",
     "description": "An electron project for a personal management application",
     "license": "MIT License",
+    "repository": "http://github.com/MatheusDosReis/personal-management",
     "main": "./dist/electron/main.js",
     "scripts": {
         "build": "node .electron-vue/build.js && electron-builder",
@@ -80,7 +81,6 @@
         "electron-builder": "^19.19.1",
         "electron-debug": "^1.4.0",
         "electron-devtools-installer": "^2.2.0",
-        "electron-rebuild": "^1.7.3",
         "extract-text-webpack-plugin": "^3.0.0",
         "file-loader": "^0.11.2",
         "html-webpack-plugin": "^2.30.1",

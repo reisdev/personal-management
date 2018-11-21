@@ -24,7 +24,7 @@ export default {
     return {
       items: [
         { icon: "apps", title: "Página Inicial", to: "/" },
-        { icon: "bubble_chart", title: "Inspire", to: "/inspire" }
+        { icon: "person_add", title: "Registrar-se", to: "/register" }
       ]
     };
   }
