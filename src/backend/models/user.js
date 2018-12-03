@@ -5,7 +5,6 @@ import Sequelize, {
 const schema = {
     name: {
         type: DataTypes.STRING,
-
     },
     password: DataTypes.STRING,
     birthday: DataTypes.DATE

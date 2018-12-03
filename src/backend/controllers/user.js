@@ -18,7 +18,6 @@ const UserController = {
     register: async function (name, password, birthday) {
         try { 
             const user = await User.findAll({where: { name: name }})
-            console.log(user)
             if(user.length === 0) {
                 const res = await User.create({
                     name: name,

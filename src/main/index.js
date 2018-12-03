@@ -44,6 +44,9 @@ app.on('activate', () => {
   }
 })
 
+// Deactivating GPU Acceleration
+app.disableHardwareAcceleration()
+
 /**
  * Auto Updater
  *
