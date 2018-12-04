@@ -1,11 +1,15 @@
 <template>
-
+      <v-layout row wrap>
+        <v-flex xs3>
+          <user-list/>
+        </v-flex>
+      </v-layout>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 
-import { User, Invoice } from '../../backend/controllers';
+import UserList from "../components/UserList"
 
 export default {
   data() {
@@ -14,13 +18,14 @@ export default {
       expenses: []
     }
   },
+  components: {
+    UserList
+  },
   methods: {
   },
   mounted: async function(){
-      Invoice.create(250.9,Date("2018-11-22").toString(),"Qualquekjdhaksjdhr coisa")
-      this.users = await User.findAll()
-      this.expenses = await Invoice.findAll()
-      console.log(this.expenses)
+      this.users = await this.$backend.User.findAll()
+      this.expenses = await this.$backend.Invoice.findAll()
   },
   computed: {
     ...mapGetters(["username"])

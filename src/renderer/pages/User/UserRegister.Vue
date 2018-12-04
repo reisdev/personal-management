@@ -46,8 +46,6 @@
 
 <script>
 
-import { User } from 'controllers'
-
 export default {
     name: 'UserRegister',
     data(){
@@ -72,7 +70,8 @@ export default {
             try {
                 if(this.password == this.passwordConf){
                     console.log(this.name,this.password,this.date)
-                    const user = await User.register(this.name,this.password,this.date)
+                    const user = await this.$backend.User.register(this.name,this.password,this.date)
+                    this.$router.push("/")
                 }
             }catch(error){
                 console.log(error)

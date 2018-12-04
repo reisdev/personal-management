@@ -8,10 +8,10 @@ const db = new Sequelize('agape', 'root', '', {
 })
 
 const User = db.define("users", userSchema)
-const Invoice = db.define("expenses",invoiceSchema)
+const Invoice = db.define("invoices",invoiceSchema)
 
 // To rebuild the tables, set to true
-const rebuild = true
+const rebuild = false
 
 db.sync({force: rebuild})
 

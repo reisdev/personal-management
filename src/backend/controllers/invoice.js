@@ -3,7 +3,7 @@ import { create } from "domain";
 
 const InvoiceController = {
     findAll: async function () {
-        return await Expense.findAll()
+        return await Invoice.findAll()
     },
     create: async function (value,date,description){
         try {

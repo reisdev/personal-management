@@ -12,7 +12,7 @@
         <v-container fluid>
           <TopBar/>
           <v-slide-y-transition mode="out-in">
-            <router-view style="padding-top: 40px" ></router-view>
+            <router-view></router-view>
           </v-slide-y-transition>
         </v-container>
       </v-content>
