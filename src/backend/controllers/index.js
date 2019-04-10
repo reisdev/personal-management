@@ -1,11 +1,11 @@
-import User from './User' 
-import Invoice from './Invoice'
+import User from './user' 
+import Invoice from './invoice'
+import Income from "./income"
 
 export default {
     install: function (Vue,options) {
         Vue.prototype.$backend = { 
-            User : User,
-            Invoice : Invoice
+            User,Invoice,Income
         }
     }
 }

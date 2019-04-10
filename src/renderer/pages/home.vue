@@ -1,6 +1,6 @@
 <template>
       <v-layout row wrap>
-        <v-flex xs3>
+        <v-flex xs5>
           <user-list/>
         </v-flex>
       </v-layout>

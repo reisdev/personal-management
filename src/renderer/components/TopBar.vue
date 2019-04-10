@@ -1,32 +1,47 @@
 <template>
-    <v-toolbar fixed app>
-      <v-toolbar-side-icon @click.native="toggleSideBar"></v-toolbar-side-icon>
-      <v-btn 
-        icon
-      >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
+  <v-system-bar class="windowbar" window dark>
+    <v-spacer></v-spacer>
+    <div class="actions">
+      <v-icon class="action" @click="windowAction('minimize')">remove</v-icon>
+      <v-icon class="action" @click="windowAction('maximize')">check_box_outline_blank</v-icon>
+      <v-icon class="action" @click="windowAction('close')">close</v-icon>
+    </div>
+  </v-system-bar>
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
+import { remote } from "electron"
 
 export default {
   data() {
     return {
       title: "CasaGo",
-      miniVariant: false
+      miniVariant: false,
+      window: remote.getCurrentWindow()
     };
   },
   methods: {
-    ...mapActions(["toggleSideBar"])
+    ...mapActions(["toggleSideBar"]),
+    windowAction(action){
+      switch(action){
+        case "maximize":
+          if(!this.window.isMaximized())
+            this.window.maximize()
+          else
+            this.window.unmaximize()
+          break
+        case "close":
+          this.window.close()
+          break
+        case "minimize":
+          this.window.minimize()
+          break
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
-
 </style>

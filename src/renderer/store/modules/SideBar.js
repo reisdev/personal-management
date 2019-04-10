@@ -22,7 +22,7 @@ const mutations = {
 }
 
 const getters = {
-    user: state => state.username
+    sidebar: state => state.ref
 }
 
 export default {

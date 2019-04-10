@@ -3,15 +3,15 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Home from "@/pages/Home";
-import UserRegister from "@/pages/User/UserRegister"
+import Home from "@/pages/home";
+import UserRegister from "@/pages/User/register"
 
 export default new Router({
     routes: [{
         path: '/',
         component: Home
     }, {
-        path: '/register',
+        path: '/user/register',
         component: UserRegister
     }]
 })

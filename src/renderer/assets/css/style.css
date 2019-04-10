@@ -1,0 +1,22 @@
+html, body{
+    overflow-y: hidden;
+}
+
+.windowbar {
+    user-select: none;
+}
+
+.windowbar .action {
+    height: 100%;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.windowbar .actions {
+    margin-right: -15px;
+    margin-bottom: -1px;
+}
+
+.windowbar .action:hover {
+    background-color: darkslategrey;
+}

@@ -1,21 +1,16 @@
 import { Invoice } from "../models"
-import { create } from "domain";
 
 const InvoiceController = {
     findAll: async function () {
         return await Invoice.findAll()
     },
-    create: async function (value,date,description){
+    create: async function (inv){
         try {
-            const res = await Invoice.create({
-                value: value,
-                date: date,
-                description: description
-            })
+            const res = await Invoice.create(inv)
             return { status: 200, data: res }
         }
-        catch(Error){
-            return { status: 500, message: Error}
+        catch(e){
+            return { status: 500, message: e}
         }
     }
 }

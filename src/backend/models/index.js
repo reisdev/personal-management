@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize'
 import userSchema from './user'
-import invoiceSchema from './Invoice'
+import invoiceSchema from './invoice'
+import incomeSchema from "./income"
 
 const db = new Sequelize('agape', 'root', '', {
     dialect: 'sqlite',
@@ -9,6 +10,7 @@ const db = new Sequelize('agape', 'root', '', {
 
 const User = db.define("users", userSchema)
 const Invoice = db.define("invoices",invoiceSchema)
+const Income = db.define("incomes",incomeSchema)
 
 // To rebuild the tables, set to true
 const rebuild = false
@@ -17,5 +19,6 @@ db.sync({force: rebuild})
 
 export {
     User,
-    Invoice
+    Invoice,
+    Income
 }
