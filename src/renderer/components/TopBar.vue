@@ -2,7 +2,7 @@
   <v-system-bar class="windowbar" window dark>
     <div class="actions left">
       <v-menu bottom offset-y>
-        <a class="action" slot="activator" dark>File</a>
+        <a class="action" slot="activator" dark>User</a>
         <v-list dense>
           <v-list-tile v-for="(item, index) in file" :key="index" @click="navigate(item.title)">
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -43,8 +43,8 @@ export default {
   data() {
     return {
       file: [
-        {title: "Open"},
-        {title: "New Window"}
+        {title: "Home"},
+        {title: "Register"}
       ],
       window: remote.getCurrentWindow()
     };
@@ -54,7 +54,7 @@ export default {
       this.on = !this.on;
     },
     navigate(title){
-      console.log(this.$router.history)
+      this.$router.push(`/user/${title.toLowerCase()}`)
     },
     ...mapActions(["toggleSideBar"]),
     windowAction(action) {

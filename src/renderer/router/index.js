@@ -8,7 +8,7 @@ import UserRegister from "@/pages/User/register"
 
 export default new Router({
     routes: [{
-        path: '/',
+        path: '/user/home',
         component: Home
     }, {
         path: '/user/register',

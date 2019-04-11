@@ -13,7 +13,7 @@ const Invoice = db.define("invoices",invoiceSchema)
 const Income = db.define("incomes",incomeSchema)
 
 // To rebuild the tables, set to true
-const rebuild = false
+const rebuild = true
 
 db.sync({force: rebuild})
 
