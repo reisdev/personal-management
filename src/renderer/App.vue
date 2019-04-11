@@ -1,14 +1,7 @@
 <template>
   <div id="app">
-    <v-app ref='app' dark>
-    <TopBar/>
-      <v-navigation-drawer
-        fixed
-        app
-        v-model='sidebar'
-      >
-        <LeftSideBar/>
-      </v-navigation-drawer>
+    <v-app ref="app" dark>
+      <TopBar/>
       <v-content>
         <v-container fluid>
           <v-slide-y-transition mode="out-in">
@@ -26,10 +19,9 @@
 </template>
 
 <script>
-
 import LeftSideBar from "@/components/LeftSideBar";
 import TopBar from "@/components/TopBar";
-import "./assets/css/style.css"
+import "./assets/css/style.css";
 
 import { mapActions } from "vuex";
 
@@ -41,8 +33,7 @@ export default {
   },
   data: () => ({
     fixed: false,
-    sidebar: false,
-    window: remote.getCurrentWindow()
+    sidebar: false
   }),
   methods: {
     ...mapActions(["storeRef"])

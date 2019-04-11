@@ -1,7 +1,33 @@
 <template>
   <v-system-bar class="windowbar" window dark>
+    <div class="actions left">
+      <v-menu bottom offset-y>
+        <a class="action" slot="activator" dark>File</a>
+        <v-list dense>
+          <v-list-tile v-for="(item, index) in file" :key="index" @click="navigate(item.title)">
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+      <v-menu bottom offset-y>
+        <a class="action" slot="activator" dark>Edit</a>
+        <v-list>
+          <v-list-tile v-for="(item, index) in items" :key="index">
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+      <v-menu bottom offset-y>
+        <a class="action" slot="activator" dark>Code</a>
+        <v-list>
+          <v-list-tile v-for="(item, index) in items" :key="index">
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+    </div>
     <v-spacer></v-spacer>
-    <div class="actions">
+    <div class="actions right">
       <v-icon class="action" @click="windowAction('minimize')">remove</v-icon>
       <v-icon class="action" @click="windowAction('maximize')">check_box_outline_blank</v-icon>
       <v-icon class="action" @click="windowAction('close')">close</v-icon>
@@ -11,32 +37,38 @@
 
 <script>
 import { mapActions } from "vuex";
-import { remote } from "electron"
+import { remote } from "electron";
 
 export default {
   data() {
     return {
-      title: "CasaGo",
-      miniVariant: false,
+      file: [
+        {title: "Open"},
+        {title: "New Window"}
+      ],
       window: remote.getCurrentWindow()
     };
   },
   methods: {
+    toggleMenu() {
+      this.on = !this.on;
+    },
+    navigate(title){
+      console.log(this.$router.history)
+    },
     ...mapActions(["toggleSideBar"]),
-    windowAction(action){
-      switch(action){
+    windowAction(action) {
+      switch (action) {
         case "maximize":
-          if(!this.window.isMaximized())
-            this.window.maximize()
-          else
-            this.window.unmaximize()
-          break
+          if (!this.window.isMaximized()) this.window.maximize();
+          else this.window.unmaximize();
+          break;
         case "close":
-          this.window.close()
-          break
+          this.window.close();
+          break;
         case "minimize":
-          this.window.minimize()
-          break
+          this.window.minimize();
+          break;
       }
     }
   }
@@ -45,3 +77,4 @@ export default {
 
 <style scoped>
 </style>
+

@@ -1,22 +1,48 @@
-html, body{
-    overflow-y: hidden;
+html,
+body {
+  overflow-y: hidden;
 }
 
 .windowbar {
-    user-select: none;
+  margin-bottom: -1px;
+  cursor: default;
+  user-select: none;
+  pointer-events: all;
+  -webkit-app-region: drag;
 }
 
-.windowbar .action {
-    height: 100%;
-    vertical-align: middle;
-    padding: 5px;
+.actions .action {
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+  padding: 5px;
+  user-select: none;
+  cursor: default !important;
+  color: white;
 }
 
-.windowbar .actions {
-    margin-right: -15px;
-    margin-bottom: -1px;
+.actions {
+  -webkit-app-region: no-drag;
+}
+
+.actions.left {
+  margin-bottom: -1px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.actions.left .action {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7.5px;
+}
+
+.actions.right {
+  margin-right: -15px;
+  margin-bottom: -1px;
 }
 
 .windowbar .action:hover {
-    background-color: darkslategrey;
+  background-color: darkslategrey;
 }
