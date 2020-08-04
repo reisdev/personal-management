@@ -53,7 +53,7 @@
     },
     "dependencies": {
         "axios": "^0.16.1",
-        "sequelize": "^4.37.7",
+        "sequelize": "^5.15.1",
         "sqlite3": "^4.0.0",
         "vue": "^2.4.2",
         "vue-electron": "^1.0.6",
